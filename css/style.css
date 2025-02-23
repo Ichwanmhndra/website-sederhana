@@ -1,0 +1,639 @@
+:root {
+    --primary: #e1e1e1;
+    --bg: #CCC8AA;
+}
+
+
+/* untuk mengatur tampilan page 1 (selamat datang) */
+* {
+    margin: 0;
+    padding: 0.1rem;
+    box-sizing: border-box;
+    outline: none;
+    border: floralwhite;
+    text-decoration: none;  
+}
+
+
+ /* untuk membuat lebihh smooth */
+ html {
+scroll-behavior: smooth;
+ }
+
+
+body {
+    font-family: 'Poppins', sans-serif, medium;
+    background-color: var(--bg);
+    color: #ffffff;
+    /* height: 6000px; */
+   
+}
+
+
+/* Navbar Atas (home,contact,about,service)*/
+/* z-index untuk menghilangkan navbar dalam 1 page */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    background-color: rgba(24, 23, 23, 0.8);
+    border-bottom: 4px solid #a3802f;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+/* Navbar Kiri (Judul Website sederhana) */
+.navbar-left .title {
+    font-style: italic;
+    font-size:2rem;
+}
+
+/* untuk mengubah judul website kami */
+.navbar-left .primary {
+    color: #fff;
+}
+
+.navbar-left .secondary {
+    color: #957C3D;
+}
+
+/* Navbar Tengah (Navigasi) */
+.navbar nav {
+    display: flex;
+    gap: 6rem;
+}
+
+
+/* Navbar Tengah (Navigasi warna font) */
+.navbar nav a {
+    color: #ffffff;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+/* untuk mengatur warna navbar */
+.navbar nav a:hover {
+    color: #957C3D;
+    text-decoration: underline;
+    transition: 0.3s linear;
+}
+
+.navbar-extra {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar-extra a:hover {
+    color: #948e8e;
+    transform: scale(1.1);
+    text-decoration: underline;
+    transition: all 0.3s ease;
+}
+
+.navbar-extra i:hover {
+    color: #f0f0f0;
+    transform: scale(1.2);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#hamburger-menu {
+    display: none;
+    cursor: pointer; 
+}
+
+
+/* Hero Section (selamat datang di website kami) yang ada di page 1 */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url('../img/header-bg.jpeg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; /* Pastikan gambar menutupi seluruh area */
+    background-position: center; /* Atur posisi gambar agar selalu berada di tengah */
+    position: relative;  /* MENGATUR ARSIRAN HITAM DI BAGIAN BAWAH PAGE */
+}
+ 
+/* untuk mengatur bagian bawah dari page 1 */
+.hero::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    bottom: 0%;
+    background: linear-gradient(0deg, rgba(1,1,1,1) 9%, rgba(255,255,255,0) 55%);
+}
+
+/* untuk mengatur FONT SELAMAT DATANG */
+.hero .content {  
+    padding : 5rem 10%;
+    max-width: 80rem;
+}
+
+/* mengatur ukuran dan warna ( SELAMAT DATANG DI WEB KAMI)*/
+.hero .content h1 {
+font-size: 6rem;
+color: #ededed;
+text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+line-height: 1.2;
+}
+
+/* mengatur learn more */
+button {
+    background-color: #a3802f; /* Warna tombol */
+    color: rgb(255, 255, 255); /* Warna teks */
+    border: none;
+    padding: 12px 20px;
+    font-style: poppins;
+    font-size: 16px;
+    cursor: pointer; /* Membuat mouse seperti terpencet jika di arahkan ke objek*/
+    border-radius: 9px; /* Membuat sudut tombol melengkung */
+    transition: background-color 0.1s ease;
+}
+
+button:hover {
+    background-color: #876623; /* Warna saat hover */
+}
+
+a button {
+    display: inline-block;
+    text-decoration: none;
+}
+
+
+
+/* mengatur warna ( Selamat Datang d web sederhana ) */
+.hero .content h1 span {
+    color: #957C3D;
+    text-shadow: #ffffff;
+}
+
+.hero .content p {
+    font: medium;
+    font-size: 1.6rem;
+    color: rgb(255, 255, 255);
+    margin-top: 1rem;
+    text-align: auto;
+    min-height: 1.4rem;
+    font-weight: 100;
+    
+}
+
+.hero .content .cta {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 2rem 3rem;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #644e16; 
+    border-radius: 1rem;
+    box-shadow: 1px 1px 3px rgba(255, 153, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+/* mengatur about Us BELUM SELESEI*/ 
+.about,
+.menu, .contact {
+    padding: 3.5rem 0%; /* mengukur tinggi (ABOUT US) */
+    font-style: poppins;
+    height: fit-content;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #ECDFCC;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+.about-img{
+    padding: 3rem 0 1;
+    height: 50vh;
+    width: 100%;   
+}
+
+.image-container {
+    height: 500px; /* Atur tinggi yang lebih besar */
+    background-size: cover; /* Menutupi seluruh area */
+    background-position: center;
+}
+
+.about h2,
+.menu h2,
+.contact h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #fefefe;
+    font-family: 'Poppins', sans-serif;
+}
+
+.about h2 span,
+.menu h2 span,
+.contact h2 span {
+    color: #968531;
+}
+ 
+ /* INI UNTUK MENGATUR PAGE KEDUA */
+.about .row {
+   display: flex; 
+   padding: 1rem;
+}
+
+.about .row .about-img {
+    flex: 1 1 55rem;
+}
+
+.about .row .about-img img {
+    width: 100%;
+}
+
+.about .row .content {
+    flex: 1 1 35rem;
+    padding: 0 1.5rem;
+}
+
+.about .row .content h3 {
+    text-align: center;
+    font-size: 2rem;
+    padding-right: 1rem;
+    font-weight: 1000;
+    font-style: italic;
+    margin-bottom: 1rem;
+    color: #968531;
+}
+
+.about .row .content p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 2rem;
+    color: #000000;
+    font-style: poppins;
+}
+
+/* our service */
+
+.services .row{
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    background-color: #3A6D8C;
+}
+
+/* Styling Section */
+.services {
+    padding: 3.5rem 10%; /* mengukur tinggi (ABOUT US) */
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 180px 1px;
+    background-color: #674636;
+    color: rgb(228, 228, 228);
+    cursor: pointer;
+}
+
+.services h2 span {
+    color: #968531;
+}
+
+
+.services h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* Container utama */
+.services-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 110px;
+    margin-bottom: 17px;
+}
+
+.services {
+    margin-top: -1px; /* Mengangkat elemen ke atas */
+    padding-top: 80px; /* untuk mengatur jarak our service */
+}
+
+
+/* Card untuk setiap layanan */
+.service-card {
+    background-color: #2f2c2c;
+    padding: 40px;
+    border-radius: 40px;
+    width: 30%;
+    text-align: justify;
+    box-shadow: 0px 4px 6px #dedcd5, 0px 1px 3px rgba(121, 61, 61, 0.764);
+}
+
+/* Gambar */
+.service-card img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Judul */
+.service-card h3 {
+    margin-top: 7px;
+    font-size: 30px;
+    color: #c2a34a;
+    text-shadow: rgb(255, 0, 0);
+    font-weight: 3000;
+}
+
+/* Paragraf */
+.service-card p {
+    font-size: 20px;
+    color: #c9c7c7;
+    font-weight: 400;
+    
+}
+
+/* Contact Section */
+
+/* Global Styling */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif, poppins;
+    background: #222;
+    color: #fff;
+}
+
+/* Section Contact */
+.contact {
+    text-align: center;
+    padding: 70px;
+    background: #ECDFCC;
+    color: #fff;
+}
+
+.contact h2 span {
+    color: #c2a34a;
+}
+
+/* Container untuk Maps & Form */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+  
+}
+
+/* Google Maps Full Width */
+.map-container {
+    margin-top: -90px;
+    padding: 100px;
+    width: 90%;
+    max-width: 80vw;
+    height: 500px;
+    overflow: hidden;
+    
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 130%;
+    border: none;
+    border-radius: 200px;
+    
+}
+
+/* Formulir Kontak */
+.form-container {
+    flex: 1%;
+    max-width: 700px;
+    padding: 30px;
+    background: #333;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(247, 247, 247, 0.1);
+}
+
+/* Input Group */
+.input-group {
+    display: flex;
+    align-items: center;
+    background: #676767;
+    padding: 10px;
+    margin: 15px 0;
+    border-radius: 10px;
+}
+
+.input-group i {
+    margin-right: 10px;
+    color: #ff6600;
+}
+
+.input-group input {
+    width: 100%;
+    background: transparent;
+    border: 12px;
+    color: #fff;
+    outline-width: 10px;
+    font-size: 15px;
+}
+
+/* Tombol Kirim */
+.btn {
+    background: #be2929;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 40%;
+    height: 40px;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background: #dba100;
+}
+
+/* Responsif untuk HP */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .map-container {
+        height: 300px;
+    }
+
+    .form-container {
+        width: 90%;
+    }
+}
+
+
+
+.contac .row form .input-group input {
+    width: 100%;
+    padding: 2rem;
+    font-size: 1rem;
+    background: none;
+    
+}
+
+/* footer */
+footer {
+    background: #c2a34a;
+    text-align: center;
+    padding: 1rem 1 1rem;
+    margin-top: 1rem;
+
+}
+
+footer .social {
+padding: 1rem 0;
+}
+
+.footer-menu {
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 1rem;
+    color: rgb(255, 0, 0);
+    font-family: 'Poppins', sans-serif;
+   
+}
+
+.links {
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 1rem;
+    color: white;
+  }
+  
+  .credit {
+    text-align: center;
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+    color: white;
+    background-color: #7e7e7c;
+    height: 3rem;
+  }
+  
+footer .social a {
+    color: white;
+    margin: 3rem;
+}
+
+footer .social a:hover,footer .links a:hover {
+    color: #000000;
+}
+
+footer .links {
+    margin-bottom: 1.5rem;
+}
+
+footer .links a {
+    color: white;
+    padding: 0.7rem 2rem;
+    
+}
+
+footer .credit {
+    font-size: 1rem;
+}
+
+footer .credit a {
+    color: white;
+    padding: 0.5rem;
+}
+
+
+
+
+/* media queries */
+
+/* Laptop */
+@media (max-width: 1366px) {
+    html {
+        font-size: 75%;
+    }
+}
+
+/* Navbar responsif pada tablet */
+@media (max-width: 768px) {
+    #hamburger-menu {
+        display: inline-block;
+    }
+
+    .navbar nav {
+        position: absolute;
+        top: 100%;
+        right: -100%; /* Sembunyikan menu awal */
+        background: #ffffff;
+        width: 30%; /* Tampilkan hanya 30% layar */
+        height: 100vh;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        transition: right 0.8s ease; 
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3); /* Tambahkan bayangan */
+    }
+
+    .navbar nav.active {
+        right: 0;
+    }
+
+    .navbar nav a {
+        color: var(--bg);
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 1.6rem;
+        text-align: center;
+    }
+}
+/* ini untuk mengatur tampilan pada tablet agar gambar di atas text */
+.about .row {
+    flex-wrap: wrap;
+
+}
+.about .row .about-img img {
+    height: 24rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+.about .row .contect {
+padding: 0%;
+}
+
+.about .row .content h3 {
+    text-align: center;
+    padding-top: 2rem;
+} 
+
+.about .row .content p {
+    font-size: 1.3rem;
+}
+
+.menu h2 {
+    margin-bottom: 0.6rem;
+}
+
+.menu p {
+    text-align: center;
+    max-width: 30rem;
+    margin: auto;
+    font-size: 1rem;
+    font-weight: 100;
+    line-height: 1.6;
+}
+
